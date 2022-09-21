@@ -1,0 +1,497 @@
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400:600:700&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Familjen Grotesk', sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+ul {
+    list-style: none;
+}
+
+/* HEADER/NAVBAR */
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    height: 100px;
+    padding: 0 30px;
+}
+
+/* LOGO */
+
+.logo {
+    width: 210px;
+    height: auto;
+    margin-left: 75px;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+
+}
+
+.desktop-main-menu ul {
+    display: flex;
+    gap: 20px;
+    margin-right: 200px;
+ 
+
+}
+
+.desktop-main-menu ul li {
+    position: relative;
+    font-weight: 600;
+    font-size: 12px;
+
+}
+
+/* MENU ITEM BOTTOM BORDER */
+
+.desktop-main-menu ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    background: #fff;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform-origin: right center;
+
+}
+
+.desktop-main-menu ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+    transition-duration: 0.4s;
+}
+
+/* Sections */
+section {
+    position: relative;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-transform: uppercase;
+}
+
+.section-inner {
+    position: absolute;
+    bottom: 200px;
+    left: 150px;
+    max-width: 560px;
+
+}
+
+.section-inner a {
+    animation: fadeInUp 0.5s ease-in-out 0.3s;
+    animation-fill-mode: both;
+}
+
+.section-inner h4 {
+    font-size: 22px;
+    margin-bottom: 5px;
+    font-weight: 300;
+    animation: fadeInUp 0.5s ease-in-out;
+
+}
+
+.section-inner h2 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    animation: fadeInUp 0.5s ease-in-out 0.2s;
+    animation-fill-mode: both;
+
+}
+
+.btn {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    min-width: 130px;
+    padding: 15px 50px;
+    margin-top: 10px;
+    border: 2px solid white;
+    text-transform: uppercase;
+    font-weight: 400;
+
+}
+
+.btn::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform .4s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.btn:hover::before {
+    transform: scaleY(1);
+    transform-origin: bottom;
+
+}
+
+.btn span {
+    position: relative;
+}
+
+.btn:hover span {
+    color: black;
+}
+
+/* Background Images */
+.section-a {
+    background-image: url("../img/section-a.webp");
+}
+
+.section-b {
+    background-image: url("../img/section-b.webp");
+}
+
+.section-c {
+    background-image: url("../img/section-c.webp");
+}
+
+.section-d {
+    background-image: url("../img/section-d.webp");
+}
+
+.section-e {
+    background-image: url("../img/section-e.webp");
+}
+
+.section-f {
+    background-image: url("../img/section-f.webp");
+}
+
+/* Scroll Arrow */
+
+.scroll-arrow {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounceFade 6s infinite;
+}
+
+/* Footer */
+
+footer ul {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 40px 0;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: grey;
+    line-height: 2.5;
+
+}
+
+footer ul li a {
+    transition: color 0.4s;
+    color: white;
+    cursor: pointer;
+}
+
+footer ul li a:hover {
+    color: grey;
+}
+
+/*   Hamburger   */
+
+.hamburger {
+    position: fixed;
+    top: 40px;
+    right: 20px;
+    z-index: 10;
+    cursor: pointer;
+    width: 20px;
+    height: 18px;
+    background: none;
+    border: none;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background: white;
+    top: 0;
+    left: 0;
+    transition: all 0.3s;
+
+}
+
+.hamburger-middle {
+    transform: translateY(10px);
+}
+
+.hamburger-bottom {
+    transform: translateY(5px)
+}
+
+.open {
+    transform: rotate(90deg);
+}
+
+.open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.open .hamburger-middle {
+    display: none;
+
+}
+
+.open .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translateX(-6px);
+
+}
+
+/*  Overlay  */
+.overlay-show {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 4;
+    transition: all 0.6s;
+}
+
+.overlay-unshow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: -1;
+    transition: all .3s linear;
+}
+
+/*  Stop scrolling  */
+.stop-scrolling {
+    overflow: hidden;
+}
+
+/*  Hidden mobile menu   */
+.mobile-only {
+    display: none;
+}
+
+/* Mobile menu */
+.mobile-main-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100%;
+    z-index: 4;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+   
+
+}
+
+.mobile-main-menu ul {
+    display: flex;
+    flex-direction: column;
+
+    width: 75%;
+}
+
+.mobile-main-menu ul li {
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-bottom: 1px rgb(110, 110, 110) dotted;
+    width: 100%;
+    text-align:right;
+}
+
+.animation1  {
+    animation: fadeInDown 1s  ;
+    
+    animation-fill-mode: both;
+}
+
+.animation2  {
+    animation: fadeInDown .6s  ;
+    animation-delay: .2s;
+    animation-fill-mode: both;
+}
+
+.animation3  {
+    animation: fadeInDown .6s  ;
+    animation-delay: .4s;
+    animation-fill-mode: both;
+}
+
+.animation4  {
+    animation: fadeInDown .6s  ;
+    animation-fill-mode: both;
+    animation-delay: .6s;
+}
+
+.animation5  {
+    animation: fadeInDown .6s  ;
+    animation-fill-mode: backwards;
+    animation-delay: .8s;
+}
+
+
+
+
+.mobile-main-menu ul li a {
+    color: white;
+    transition: color .4s;
+
+
+}
+
+.mobile-main-menu ul li a:hover {
+    color:GREY;
+}
+
+
+
+.mobile-hide {
+    transform: translateX(0); 
+}
+
+/*  Mobile link animation */
+
+
+
+/* Animations */
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(200%)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%)
+    }
+
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-300%)
+    
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+
+}
+
+@keyframes bounceFade {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    40% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*  Media Queries */
+
+@media(max-width: 960px) {
+
+    /*  Hide desktop menu */
+    .desktop-main-menu {
+        display: none;
+    }
+    .mobile-only {
+        display: block;
+    }
+}
+
+@media(max-width: 600px) {
+
+    /* Section inner */
+    .section-inner {
+        position: absolute;
+        bottom: 80px;
+        left: 20px;
+    }
+
+    .section-inner h2 {
+        font-size: 35px;
+    }
+
+    footer ul li:first-child {
+        position: absolute;
+        top: 0px;
+        transform: translateY(-100%)
+    }
+
+    footer ul {
+        gap: 10px;
+    }
+
+    .logo {
+        width: 150px;
+        margin: auto;
+    }
+}
